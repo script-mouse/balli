@@ -1,0 +1,263 @@
+#player {
+	background-color: rgba(0,0,0,0);
+	width: 7.2vmax;
+	height: 7.2vmax;
+	position: absolute;
+	left: calc(32vw - 3.1vmax);
+	top: calc(32vh + 4.5vmax);
+	z-index: 2;
+}
+#arrow {
+	width: 20vmax;
+	height: 20vmax;
+	top: calc(50vh - 10vmax);
+	left: calc(100vw - 20vmax);
+	position: absolute;
+	display: none;
+	animation-duration: 750ms;
+	animation-iteration-count: infinite;
+}
+.finish {
+	--color: green;
+	position: absolute;
+	width: 2.8vmax;
+	height: 2.8vmax;
+	outline-width: 3.1vmax;
+	outline-style: outset;
+	outline-color: var(--color);
+	right: -4.5vmax;
+	bottom: -4.5vmax;
+	background-color: var(--color);
+}
+.level {
+	position: absolute;
+	float: left;
+	display: none;
+}
+#levelOne {
+	display: block;
+	width: calc(150vw - 7.2vmax);
+	height: calc(100vh - 7.2vmax);
+}
+#levelTwo {
+	width: calc(100vw - 7.2vmax);
+	height: calc(100vh - 7.2vmax);
+}
+#lore {
+	position: fixed;
+}
+#fourthStopSign {
+	left: calc(50vw - 10vmax);
+	top: calc(50vh - 10vmax);
+	width: 20vmax;
+	height: 20vmax;
+	transition-property: top,left;
+	animation-name: stopSignFourAnimation;
+	animation-direction: normal;
+	animation-duration: 4s;
+}
+@keyframes stopSignFourAnimation {
+	from {
+		left: calc(50vw - 10vmax);
+		top: 5vh;
+	}
+	25% {
+		left: 5vw;
+	}
+	50% {
+		left: calc(50vw - 10vmax);
+		top: calc(95vh - 20vmax);
+	}
+	75% {
+		left: calc(95vw - 20vmax);
+		top: calc(50vh - 10vmax);
+	}
+	to {
+		left: calc(50vw - 10vmax);
+		top: 5vh;
+	}
+}
+#thirdStopSign {
+	left: calc(140vw - 3vmax);
+	top: calc(60vh - 3vmax);
+	width: 6vmax;
+	height: 6vmax;
+	animation-duration: 2s;
+	animation-name: stopSignThreeAnimation;
+	transition-property: top,left;
+}
+@keyframes stopSignThreeAnimation {
+	from {
+		left: calc(150vw - 10.2vmax);
+		top: calc(60vh - 3vmax);
+	}
+	to {
+		left: calc(110vw - 3vmax);
+		top: calc(100vh - 3vmax);
+	}
+}
+#firstStopSign {
+	left: 57vw;
+	top: calc(25vh - 3.5vmax);
+	animation-name: stopSignOneAnimation;
+	animation-duration: 1.5s;
+	animation-delay: 1990ms;
+	transition-property: top;
+}
+#secondStopSign {
+	width: 3vmax;
+	height: 3vmax;
+	top: calc(30vh - 1.5vmax);
+	left: 13.5vmax;
+	animation-name: stopSignTwoAnimation;
+	animation-duration: 3s;
+	animation-delay: 1990ms;
+	transition-property: left;
+}
+.stopSign {
+	width: 7vmax;
+	height: 7vmax;
+	position: absolute;
+	box-sizing: border-box;
+	z-index: 1;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-fill-mode: both;
+	animation-direction: alternate;
+}
+.deload {
+	display: none;
+}
+@keyframes stopSignTwoAnimation {
+	from {
+		left: 13.5vmax;
+	}
+	to {
+		left: 91.5vmax;
+	}
+}
+@keyframes stopSignOneAnimation {
+	from {
+		top: calc(25vh - 3.5vmax);
+	}
+	to {
+		top: calc(75vh - 3.5vmax);
+	}
+}
+#startPrompt {
+	font-size: 2rem;
+	font-weight: 300;
+	width: 35vw;
+	left: 32.5vw;
+	position: absolute;
+	top: calc(55% - 2rem);
+	text-align: center;
+	color: lime;
+	text-decoration: none;
+	font-family: sans-serif;
+	animation-name: blink;
+	opacity: 0;
+	animation-delay: 1715ms;
+	background-color: rgba(0,0,0,0);
+	border-width: 0px;
+	animation-duration: 375ms;
+	animation-iteration-count: infinite;
+	z-index: 2;
+}
+@keyframes blink {
+	from {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	60% {
+		opacity: 1;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.focusable:focus {
+	outline-color: black;
+	outline-width: 3px;
+	outline-style: solid;
+}
+.info {
+	display: none;
+}
+#two {
+	float: right;
+	font-size: 0.2em;
+	animation-name: infoShow;
+	animation-duration: 950ms;
+}
+@keyframes infoShow {
+	from {
+		display: none;
+	}
+	to {
+		display: inline;
+	}
+}
+h1 {
+	text-shadow: orange -0.1em 0;
+	color: orange;
+	font-stretch: 150%;
+	font-weight: 900;
+	letter-spacing: 0.1em;
+	font-family: sans-serif;
+	font-size: 3em;
+	text-align: center;
+	z-index: 3;
+	position: relative;	
+	animation-name: comeFromAbove;
+	animation-duration: 840ms;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	animation-delay: 75ms;
+	position: absolute;
+	top: -3em;
+	width: 100vw;
+}
+body {
+	background-color: blue; 
+	margin: 0;
+	overflow: hidden;
+}
+@keyframes comeFromAbove {
+	from {
+		top: -1em;
+	}
+	to {
+		top: 0.5em;
+	}
+}
+#balli {
+	animation-name: flyn;
+	animation-duration: 450ms;
+	animation-delay: 1015ms;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+	color: rbg(11,45,232);
+	text-shadow: rgb(11,45,232) -0.1em 0;
+	font-size: 1.4em;
+	display: block;
+	opacity: 0;
+	margin-top: -0.2em;
+}
+@keyframes flyn {
+	from {
+		opacity: 0;
+		transform: rotateX(720deg);
+		font-size: 0.2em;
+	}
+	to {
+		opacity: 1;
+		transform: rotateX(0deg);
+		font-size: 1.4em;
+	}
+}
